@@ -8,7 +8,7 @@ import os
 
 # Load data
 print("Loading data...")
-df = pd.read_csv('data/sms_spam_no_header.csv')
+df = pd.read_csv('data/sms_spam_no_header.csv', header=None, names=['label', 'text'])
 
 # Split
 X_train, X_test, y_train, y_test = train_test_split(
