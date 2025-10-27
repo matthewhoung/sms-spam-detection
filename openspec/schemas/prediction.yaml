@@ -1,0 +1,32 @@
+name: SpamPrediction
+description: SMS spam prediction response
+type: object
+properties:
+  text:
+    type: string
+    description: Input SMS message
+    example: "Free entry win money"
+  
+  prediction:
+    type: string
+    enum: [spam, ham]
+    description: Classification result
+  
+  spam_probability:
+    type: number
+    minimum: 0
+    maximum: 1
+    description: Probability that message is spam
+    example: 0.85
+  
+  confidence:
+    type: number
+    minimum: 0
+    maximum: 100
+    description: Confidence percentage
+    example: 85.0
+
+required:
+  - text
+  - prediction
+  - spam_probability

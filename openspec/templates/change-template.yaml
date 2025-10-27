@@ -1,0 +1,83 @@
+# OpenSpec Change Proposal Template
+# Copy this file to openspec/changes/<change-name>/change.yaml
+# and fill in the details
+
+title: Short descriptive title of the change
+type: feature  # Options: feature | bugfix | enhancement | refactor | docs
+status: proposed  # Options: proposed | in_progress | implemented | deprecated
+created: YYYY-MM-DD
+author: Your Name
+
+description: |
+  Detailed description of what this change does and why it's needed.
+
+  Explain the problem being solved or the feature being added.
+  Provide context that helps understand the motivation.
+
+  Can span multiple lines and paragraphs.
+
+components:
+  - name: ComponentName
+    type: module  # Options: module | class | function | file | application
+    file: path/to/file.py
+    description: Brief description of what this component does or how it changes
+
+  # Add more components as needed
+  # - name: AnotherComponent
+  #   type: function
+  #   file: path/to/another_file.py
+  #   description: Another component description
+
+features:  # Use for type: feature
+  - Feature point 1
+  - Feature point 2
+  - Feature point 3
+  # List all user-facing features or capabilities
+
+changes:  # Use for type: bugfix | enhancement | refactor
+  - What changed in component A
+  - What changed in component B
+  - Impact on existing functionality
+  # List all modifications made
+
+dependencies:  # Optional - new libraries or requirement changes
+  - package-name>=1.0.0  # Why this dependency is needed
+  # - another-package>=2.0
+
+tech_stack:  # Optional - technologies/frameworks used
+  - Technology 1
+  - Technology 2
+
+testing:  # Optional - how to test this change
+  manual:
+    - Step 1 to test
+    - Step 2 to test
+    - Expected result
+  automated:
+    - Unit tests in tests/test_feature.py
+    - Integration tests in tests/integration/
+
+acceptance_criteria:  # Optional - when is this change complete?
+  - [ ] Criterion 1 met
+  - [ ] Criterion 2 met
+  - [ ] Documentation updated
+  - [ ] Tests passing
+
+related_changes:  # Optional - link to related changes
+  - changes/previous-change  # This builds on previous-change
+  # - changes/another-change  # Related to another-change
+
+notes: |  # Optional - additional context
+  Any additional information, design decisions, trade-offs,
+  or future considerations.
+
+  Can include:
+  - Why certain approaches were chosen
+  - Known limitations
+  - Future enhancement ideas
+  - Links to external resources
+
+# For deprecated changes only:
+# deprecated_date: YYYY-MM-DD
+# replaced_by: changes/new-implementation
+# deprecation_reason: Why this was replaced or removed

@@ -1,0 +1,49 @@
+title: Add SMS Spam Detector
+type: feature
+status: implemented
+created: 2025-10-27
+author: Matthew Hong
+
+description: |
+  Simple Streamlit web app for SMS spam detection using 
+  pre-trained Logistic Regression model.
+
+components:
+  - name: StreamlitApp
+    type: application
+    file: app/streamlit_app.py
+    description: Main spam detection interface
+    
+  - name: SpamClassifier
+    type: model
+    file: models/spam_classifier.pkl
+    description: Pre-trained TF-IDF + LogisticRegression pipeline
+
+features:
+  - Text input for SMS messages
+  - Quick example buttons (spam/ham)
+  - Real-time prediction with confidence scores
+  - Visual result display with progress bar
+
+tech_stack:
+  - Streamlit (UI framework)
+  - scikit-learn (ML model)
+  - joblib (model persistence)
+  - Python 3.11.14
+
+data_source:
+  url: https://github.com/PacktPublishing/Hands-On-Artificial-Intelligence-for-Cybersecurity
+  file: Chapter03/datasets/sms_spam_no_header.csv
+  records: ~5574
+  format: CSV (2 columns, no header)
+
+model_specs:
+  algorithm: LogisticRegression
+  vectorizer: TfidfVectorizer
+  features: 5000
+  ngrams: (1, 2)
+  accuracy: ">95%"
+
+deployment:
+  platform: Streamlit Cloud
+  url: TBD
